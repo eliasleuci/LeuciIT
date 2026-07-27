@@ -19,12 +19,11 @@ const Hero = () => {
                         </div>
 
                         <h1>
-                            Software a medida.<br />
-                            Resultados a la medida de <span className="text-accent">tu ambición</span>.
+                            Creamos el software que <span className="text-accent">tu negocio necesita</span>.
                         </h1>
 
                         <p>
-                            Soy Elias Leuci. Diseño y desarrollo plataformas web, paneles de gestión y sistemas que hoy operan en organismos públicos, empresas y startups.
+                            Plataformas web y sistemas digitales hechos 100% a medida.
                         </p>
 
                         <div className="hero-actions">
