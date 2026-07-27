@@ -1,27 +1,39 @@
-:root {
-  /* Color Palette - Midnight Studio (Dark Tech Premium) */
-  --bg-main: #0a0a0f;
-  --bg-card: #12121a;
-  --bg-card-hover: #181824;
-  --bg-surface: #161622;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-bright: rgba(255, 255, 255, 0.16);
-  --border-accent: rgba(79, 110, 255, 0.4);
+:root, [data-theme="dark"] {
+  /* Color Palette - Elevated Bright Slate (Default Theme - Dark Tech Premium) */
+  --bg-main: #0b0f19;
+  --bg-card: #151d30;
+  --bg-card-hover: #1c2740;
+  --bg-surface: #172136;
+  --bg-surface-subtle: rgba(23, 33, 54, 0.6);
+  --bg-navbar: rgba(11, 15, 25, 0.88);
+  --bg-footer: #070a12;
+  --bg-mobile-menu: rgba(11, 15, 25, 0.98);
 
-  --text-main: #f5f5f7;
-  --text-muted: #9494a8;
-  --text-dim: #626274;
+  --border: rgba(255, 255, 255, 0.12);
+  --border-bright: rgba(255, 255, 255, 0.22);
+  --border-accent: rgba(99, 102, 241, 0.45);
 
-  --accent: #4f6eff;
-  --accent-glow: rgba(79, 110, 255, 0.25);
-  --accent-gradient: linear-gradient(135deg, #7b5eff 0%, #4f6eff 100%);
-  --accent-light: #7b5eff;
-  
-  --emerald: #00d68f;
-  --emerald-glow: rgba(0, 214, 143, 0.15);
+  --text-main: #f8fafc;
+  --text-muted: #cbd5e1;
+  --text-dim: #94a3b8;
+
+  --accent: #6366f1;
+  --accent-glow: rgba(99, 102, 241, 0.3);
+  --accent-gradient: linear-gradient(135deg, #818cf8 0%, #3b82f6 100%);
+  --accent-light: #818cf8;
+
+  --emerald: #10b981;
+  --emerald-glow: rgba(16, 185, 129, 0.2);
 
   --white: #ffffff;
   --black: #000000;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.6);
+
+  --aurora-1: rgba(129, 140, 248, 0.18);
+  --aurora-2: rgba(59, 130, 246, 0.14);
 
   /* Typography */
   --font-heading: 'Outfit', -apple-system, sans-serif;
@@ -35,6 +47,42 @@
   --radius-md: 16px;
   --radius-lg: 24px;
 }
+
+[data-theme="light"] {
+  /* Color Palette - Luminous Light Variant */
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-surface: #f1f5f9;
+  --bg-surface-subtle: rgba(241, 245, 249, 0.7);
+  --bg-navbar: rgba(248, 250, 252, 0.88);
+  --bg-footer: #0f172a;
+  --bg-mobile-menu: rgba(248, 250, 252, 0.98);
+
+  --border: rgba(148, 163, 184, 0.22);
+  --border-bright: rgba(148, 163, 184, 0.4);
+  --border-accent: rgba(79, 70, 229, 0.35);
+
+  --text-main: #0f172a;
+  --text-muted: #334155;
+  --text-dim: #64748b;
+
+  --accent: #4f46e5;
+  --accent-glow: rgba(79, 70, 229, 0.22);
+  --accent-gradient: linear-gradient(135deg, #4f46e5 0%, #2563eb 100%);
+  --accent-light: #6366f1;
+  
+  --emerald: #059669;
+  --emerald-glow: rgba(16, 185, 129, 0.15);
+
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 10px 25px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 45px rgba(15, 23, 42, 0.12);
+
+  --aurora-1: rgba(99, 102, 241, 0.12);
+  --aurora-2: rgba(59, 130, 246, 0.08);
+}
+
 
 * {
   margin: 0;
@@ -53,6 +101,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Background Aurora & Grid Mesh */
@@ -60,10 +109,12 @@ body {
   position: relative;
   min-height: 100vh;
   background-image: 
-    radial-gradient(circle at 50% 0%, rgba(123, 94, 255, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 100% 40%, rgba(79, 110, 255, 0.06) 0%, transparent 40%);
+    radial-gradient(circle at 50% 0%, var(--aurora-1) 0%, transparent 50%),
+    radial-gradient(circle at 100% 40%, var(--aurora-2) 0%, transparent 40%);
   background-attachment: fixed;
+  transition: background 0.3s ease;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
@@ -191,7 +242,7 @@ ul {
   z-index: 1000;
   padding: 20px 0;
   transition: all 0.3s ease;
-  background: rgba(10, 10, 15, 0.7);
+  background: var(--bg-navbar);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
@@ -215,7 +266,8 @@ ul {
 .logo-badge {
   font-size: 0.65rem;
   font-family: var(--font-mono);
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   padding: 2px 6px;
   border-radius: 4px;
   color: var(--text-muted);
@@ -242,6 +294,7 @@ ul {
   color: var(--text-main);
 }
 
+
 .mobile-menu-btn {
   display: none;
   background: none;
@@ -249,6 +302,7 @@ ul {
   color: var(--text-main);
   cursor: pointer;
 }
+
 
 /* Hero Section */
 .hero {
@@ -696,11 +750,11 @@ section {
 }
 
 .browser-frame {
-  background: #181822;
+  background: var(--bg-card);
   border: 1px solid var(--border-bright);
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-md);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   width: 100%;
@@ -712,11 +766,11 @@ section {
 .browser-frame:hover {
   transform: translateY(-4px);
   border-color: var(--accent);
-  box-shadow: 0 16px 40px rgba(79, 110, 255, 0.2);
+  box-shadow: 0 16px 40px var(--accent-glow);
 }
 
 .browser-header {
-  background: #101018;
+  background: var(--bg-surface);
   padding: 10px 16px;
   display: flex;
   align-items: center;
@@ -769,7 +823,7 @@ section {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 9;
-  background: #000;
+  background: var(--bg-surface);
 }
 
 .browser-body img {
@@ -810,14 +864,14 @@ section {
   border-radius: 100px;
   font-size: 0.85rem;
   font-weight: 600;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-md);
 }
 
 /* Image Modal */
 .image-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(12px);
   z-index: 2000;
   display: flex;
@@ -836,7 +890,7 @@ section {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+  box-shadow: var(--shadow-lg);
 }
 
 .image-modal-header {
@@ -874,8 +928,9 @@ section {
 .image-modal-body {
   overflow-y: auto;
   padding: 20px;
-  background: #0a0a0f;
+  background: var(--bg-surface);
 }
+
 
 .image-modal-body img {
   width: 100%;
@@ -1042,7 +1097,7 @@ section {
   padding: 30px 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  background: rgba(18, 18, 26, 0.5);
+  background: var(--bg-surface-subtle);
 }
 
 .tech-track {
@@ -1120,7 +1175,7 @@ section {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 60px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-lg);
 }
 
 .contact-info h2 {
@@ -1209,7 +1264,7 @@ section {
 .footer {
   border-top: 1px solid var(--border);
   padding: 60px 0 30px;
-  background: #07070b;
+  background: var(--bg-footer);
 }
 
 .footer-top {
@@ -1287,7 +1342,7 @@ section {
   right: -100%;
   width: 100%;
   height: 100vh;
-  background: rgba(10, 10, 15, 0.98);
+  background: var(--bg-mobile-menu);
   backdrop-filter: blur(20px);
   z-index: 999;
   display: flex;
@@ -1295,6 +1350,7 @@ section {
   justify-content: center;
   transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 
 .mobile-menu.active {
   right: 0;

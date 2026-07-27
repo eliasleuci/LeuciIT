@@ -22,6 +22,7 @@ const Navbar = () => {
                         <li><a href="#testimonios">Testimonios</a></li>
                         <li><a href="#faq">FAQ</a></li>
                     </ul>
+
                     <a href="#contacto" className="btn btn-primary btn-sm">
                         Agendar reunión estratégica <ArrowUpRight size={16} />
                     </a>
@@ -57,3 +58,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
