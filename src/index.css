@@ -628,13 +628,20 @@ section {
   border-radius: var(--radius-lg);
   padding: 48px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .showcase-info {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
+  min-width: 0;
 }
+
 
 .showcase-category {
   font-family: var(--font-mono);
@@ -684,6 +691,8 @@ section {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  width: 100%;
+  min-width: 0;
 }
 
 .browser-frame {
@@ -694,6 +703,10 @@ section {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .browser-frame:hover {
@@ -709,11 +722,16 @@ section {
   align-items: center;
   gap: 12px;
   border-bottom: 1px solid var(--border);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .browser-dots {
   display: flex;
   gap: 6px;
+  flex-shrink: 0;
 }
 
 .b-dot {
@@ -732,7 +750,8 @@ section {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  flex: 1;
+  flex: 1 1 0%;
+  min-width: 0;
 }
 
 .browser-badge {
@@ -742,7 +761,9 @@ section {
   padding: 2px 8px;
   border-radius: 4px;
   font-family: var(--font-mono);
+  flex-shrink: 0;
 }
+
 
 .browser-body {
   position: relative;
