@@ -1,5 +1,6 @@
 import React from 'react';
-import { Cpu, Linkedin, ArrowUpRight } from 'lucide-react';
+import { Linkedin, ArrowUpRight } from 'lucide-react';
+import LogoIcon from './LogoIcon';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -10,7 +11,7 @@ const Footer = () => {
                 <div className="footer-top">
                     <div className="footer-brand">
                         <a href="#" className="logo">
-                            <Cpu size={24} className="text-accent" />
+                            <LogoIcon size={28} />
                             <span>Leuci IT</span>
                             <span className="logo-badge">STUDIO</span>
                         </a>

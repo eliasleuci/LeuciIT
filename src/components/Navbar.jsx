@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Cpu, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
+import LogoIcon from './LogoIcon';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,7 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="container navbar-content">
                 <a href="#" className="logo" onClick={() => setIsOpen(false)}>
-                    <Cpu size={24} className="text-accent" />
+                    <LogoIcon size={28} />
                     <span>Leuci IT</span>
                     <span className="logo-badge">STUDIO</span>
                 </a>
@@ -53,7 +54,7 @@ const Navbar = () => {
             <div className={`mobile-menu ${isOpen ? 'active' : ''}`}>
                 <div className="mobile-menu-header">
                     <a href="#" className="logo" onClick={() => setIsOpen(false)}>
-                        <Cpu size={24} className="text-accent" />
+                        <LogoIcon size={28} />
                         <span>Leuci IT</span>
                         <span className="logo-badge">STUDIO</span>
                     </a>
